@@ -28,6 +28,7 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     display: grid;
+    width: 600px;
 
     grid-template-areas: 
         "header header"
@@ -53,6 +54,7 @@ body {
 .main-description {
     color: var(--grayishBlue);
     font-size: 14px;
+    line-height: 1.4;
     margin-bottom: 6px;
 }
 
@@ -62,6 +64,10 @@ a,
     color: #fff;
 }
 
+.section-title {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
 
 
 /* --------- Sections --------- */
@@ -81,6 +87,9 @@ section {
     background-color: var(--cyanBackground1);
     border-bottom-left-radius: 10px;
     grid-area: content1;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
 }
 
 .third-section {
@@ -90,6 +99,25 @@ section {
 }
 
 /* --------- Section Specifics --------- */
+.cost-div {
+    align-items: center;
+    display: flex;
+}
+
+.cost {
+    font-size: 26px;
+    font-weight: 700;
+    margin-right: 12px;
+}
+
+.cost-info {
+    margin-top: 10px;
+}
+
+.cost-description {
+    opacity: 0.8;
+}
+
 .signUp-button {
     text-decoration: none;
     background-color: var(--brightYellow);
@@ -100,14 +128,51 @@ section {
     display: inline-block;
     text-align: center;
     line-height: 3;
+    margin-top: 28px;
+}
+
+.reasons-list {
+    font-size: 14px;
+    padding-right: 30px;
+    opacity: 0.8;
+}
+
+.reasons-list li {
+    margin-bottom: 4px;
 }
 
 /* --------- Attribution --------- */
 .attribution { 
-    font-size: 11px; 
+    font-size: 18px; 
+    margin-top: 14px;
     text-align: center; 
 }
 
 .attribution a { 
-    color: hsl(228, 45%, 44%);
+    color: var(--cyan);
+    text-decoration: none;
+}
+
+
+/* --------- Media Queries --------- */
+
+@media only screen and (max-width: 602px) {
+    .container {
+        grid-template-areas: 
+        "header header"
+        "content1 content1"
+        "content2 content2"
+        ;
+
+        width: 90vw;
+    }
+
+    .second-section {
+        border-radius: 0;
+    }
+
+    .third-section {
+        border-bottom-left-radius: 10px;
+    }
+
 }
